@@ -9,7 +9,13 @@ const blogsRouter = require('./controllers/blogs')
 const mongoose = require('mongoose')
 
 app.use(cors())
+
 app.use(express.json())
+
+app.get('/', (request, response) => {
+  response.json('Hola mundo')
+})
+
 app.use('/api/blogs', blogsRouter)
 
 const PORT = process.env.PORT || 3001
